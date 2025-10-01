@@ -1,7 +1,7 @@
 {
-  "name": "prompt-builder",
+  "name": "promptly",
   "version": "1.0.0",
-  "description": "Claude Code Prompt Builder with SQLite database",
+  "description": "Promptly - A prompt management app with SQLite database",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

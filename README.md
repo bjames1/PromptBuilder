@@ -1,4 +1,4 @@
-# Prompt Builder
+# Promptly
 
 A web-based application for creating, organizing, and managing prompts with rich text editing capabilities and image attachments.
 
@@ -12,7 +12,7 @@ A web-based application for creating, organizing, and managing prompts with rich
 
 ## What It Does
 
-Prompt Builder helps you create and organize reusable prompts for AI assistants or other purposes. You can:
+Promptly helps you create and organize reusable prompts for AI assistants or other purposes. You can:
 
 1. Create multiple projects to categorize your prompts
 2. Write prompts with rich text formatting

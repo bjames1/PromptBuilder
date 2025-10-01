@@ -34,7 +34,14 @@
                         <button id="renameProjectBtn" class="btn btn-icon" title="Rename Project">✏️</button>
                         <button id="deleteProjectBtn" class="btn btn-icon btn-danger" title="Delete Project">🗑️</button>
                     </div>
-                    <button id="newPromptBtn" class="btn btn-primary">+ New Prompt</button>
+                    <div class="header-actions">
+                        <button id="manageCategoriesBtn" class="btn btn-secondary">🏷️ Manage Categories</button>
+                        <button id="newPromptBtn" class="btn btn-primary">+ New Prompt</button>
+                    </div>
+                </div>
+
+                <div class="categories-bar" id="categoriesBar" style="display: none;">
+                    <!-- Categories will be rendered here -->
                 </div>
 
                 <div class="prompts-grid" id="promptsGrid">
@@ -46,7 +53,11 @@
                 <div class="editor-header">
                     <button id="backToProjectBtn" class="btn btn-secondary">← Back to Project</button>
                     <input type="text" id="promptTitle" class="prompt-title-input" placeholder="Untitled Prompt">
+                    <select id="promptCategorySelect" class="category-select">
+                        <option value="">No Category</option>
+                    </select>
                     <div class="editor-actions">
+                        <button id="savePromptBtn" class="btn btn-primary">💾 Save</button>
                         <button id="attachImageBtn" class="btn btn-secondary">📎 Attach Image</button>
                         <button id="exportPromptBtn" class="btn btn-success">📋 Export to Clipboard</button>
                         <button id="deletePromptBtn" class="btn btn-danger">Delete Prompt</button>
@@ -71,6 +82,31 @@
                         <button class="toolbar-btn" data-command="formatBlock" data-value="p" title="Paragraph">P</button>
                     </div>
                 </div>
+
+                <div class="model-response-section">
+                    <div class="section-header">
+                        <h3>Model Response</h3>
+                        <button id="copyResponseBtn" class="btn btn-secondary btn-sm" style="display: none;">📋 Copy</button>
+                    </div>
+                    <textarea id="modelResponse" class="model-response-textarea" placeholder="Paste the model's response here..."></textarea>
+                </div>
+
+                <div class="export-options">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="includeImagesCheckbox" checked>
+                        <span>Include images in exported prompt</span>
+                    </label>
+                </div>
+
+                <div class="follow-ups-section">
+                    <div class="section-header">
+                        <h3>Follow-up Prompts</h3>
+                        <button id="addFollowUpBtn" class="btn btn-primary btn-sm">+ Add Follow-up</button>
+                    </div>
+                    <div id="followUpsList" class="follow-ups-list">
+                        <!-- Follow-up prompts will be rendered here -->
+                    </div>
+                </div>
             </div>
         </main>
     </div>
@@ -87,8 +123,26 @@
         </div>
     </div>
 
-    <input type="file" id="imageUploadInput" accept="image/*" style="display: none;">
+    <!-- Modal for managing categories -->
+    <div class="modal" id="categoriesModal">
+        <div class="modal-content modal-large">
+            <h3>Manage Categories</h3>
+            <div class="categories-list" id="categoriesList">
+                <!-- Categories will be rendered here -->
+            </div>
+            <div class="new-category-form">
+                <input type="text" id="newCategoryName" class="input" placeholder="New category name">
+                <input type="color" id="newCategoryColor" class="color-input" value="#3498db">
+                <button id="addCategoryBtn" class="btn btn-primary">Add Category</button>
+            </div>
+            <div class="modal-actions">
+                <button id="closeCategoriesBtn" class="btn btn-secondary">Close</button>
+            </div>
+        </div>
+    </div>
 
-    <script src="app.js"></script>
+    <input type="file" id="imageUploadInput" accept="image/*" multiple style="display: none;">
+
+    <script src="app.js?v=12"></script>
 </body>
 </html>
